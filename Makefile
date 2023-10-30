@@ -5,12 +5,12 @@ LDFLAGS = -lm
 .PHONY: all, clean
 all: printrandom
 printrandom: random.o linear.o main.o
-	$(LD) $(LDFLAGS) -rdynamic -fPIC $^ -o $@
+    $(LD) $(LDFLAGS) -rdynamic -fPIC $^ -o $@
 random.o: random.c
-	$(CC) $(CFLAGS) -fPIC -DPIC $< -o $@
+    $(CC) $(CFLAGS) -fPIC -DPIC $< -o $@
 linear.o: linear.c
-	$(CC) $(CFLAGS) -fPIC -DPIC $< -o $@
+    $(CC) $(CFLAGS) -fPIC -DPIC $< -o $@
 main.o: main.c
-	$(CC) $(CFLAGS) -fPIC -DPIC $< -o $@
+    $(CC) $(CFLAGS) -fPIC -DPIC $< -o $@
 clean:
-	rm -rf random.o linear.o main.o printrandom
+    rm -rf random.o linear.o main.o printrandom
