@@ -9,7 +9,7 @@ random_next(RandomSource *src)
 {
     const char *source = "/dev/urandom";
     unsigned long long num;
-    int fd = open(source, O_RDONLY, 0);
+    int fd = open(source, O_RDONLY);
     read(fd, &num, sizeof(num));
     close(fd);
     double new = num ? (1.0 * (num - 1)) / (1.0 * ULLONG_MAX) : 0.0;
